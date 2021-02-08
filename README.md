@@ -2,6 +2,10 @@
 
 In the project directory, you can run:
 
+##### `yarn install`
+
+Download and install all necessary dependencies to run the project.
+
 ##### `yarn start`
 
 Runs the app in the development mode.\
@@ -20,4 +24,5 @@ There are two envs which needs to be configured in order to search from Google a
 This can be found on the *.env.template* file:
 
 REACT_APP_GOOGLE_API=
+
 REACT_APP_BING_API=
