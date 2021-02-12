@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Results component renders correctly 1`] = `
+<div
+  className="item-container"
+  data-testid="result"
+>
+  <p
+    data-testid="item"
+  >
+    <a
+      href="www.google.com"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Google
+    </a>
+     
+    <br />
+    <small>
+      Google Inc.
+    </small>
+  </p>
+  <hr
+    className="hr"
+  />
+  <p
+    data-testid="item"
+  >
+    <a
+      href="www.bing.com"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Bing
+    </a>
+     
+    <br />
+    <small>
+      Bing Inc.
+    </small>
+  </p>
+  <hr
+    className="hr"
+  />
+</div>
+`;

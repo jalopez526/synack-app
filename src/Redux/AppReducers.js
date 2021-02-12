@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import serviceReducer from "./ServiceReducer";
+import { reducer as SearchReducer } from "./Store/Search/Reducers";
 
 const reducers = combineReducers({
-  service: serviceReducer,
+  search: SearchReducer,
 });
 
 export default reducers;

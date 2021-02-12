@@ -1,18 +1,20 @@
 import React from "react";
-import { SearchEngines } from "../enum/SearchEngines";
-import BingResults from "./BingResults";
-import GoogleResults from "./GoogleResults";
+import Result from "./Result";
 
-const Results = ({ searchEngine }) => {
+const Results = ({ data }) => {
+  if (!data) return <></>;
+
   return (
-    <>
-      {[SearchEngines.BOTH, SearchEngines.GOOGLE].includes(searchEngine) && (
-        <GoogleResults />
-      )}
-      {[SearchEngines.BOTH, SearchEngines.BING].includes(searchEngine) && (
-        <BingResults />
-      )}
-    </>
+    <div data-testid="result" className="item-container">
+      {data.map((result, index) => (
+        <Result
+          key={index}
+          title={result.title}
+          link={result.link}
+          secondary={result.snippet}
+        />
+      ))}
+    </div>
   );
 };
 

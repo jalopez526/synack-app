@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing InputSearch component renders correctly 1`] = `
+<input
+  className="control"
+  data-testid="search-input"
+  onChange={[MockFunction]}
+  placeholder="What would you like to search?"
+  type="text"
+  value="http://www.facebook.com"
+/>
+`;

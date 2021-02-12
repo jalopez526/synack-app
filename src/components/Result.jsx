@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = ({ title, link, secondary }) => {
+const Result = ({ title, link, secondary }) => {
   return (
     <>
       <p data-testid="item">
@@ -15,4 +15,4 @@ const Item = ({ title, link, secondary }) => {
   );
 };
 
-export default Item;
+export default Result;
