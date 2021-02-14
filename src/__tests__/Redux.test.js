@@ -1,6 +1,6 @@
 import { expectSaga } from "redux-saga-test-plan";
 import SearchActions from "../Redux/Store/Search/Actions";
-import { search } from "../Redux/Sagas/Search/SearchSaga";
+import { search } from "../Redux/Modules/Search/Saga";
 import { searchOnGoogle } from "../Api/GoogleServices";
 import { searchOnBing } from "../Api/BingServices";
 import { call } from "redux-saga/effects";

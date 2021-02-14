@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { reducer as SearchReducer } from "./Store/Search/Reducers";
+import { reducer as SearchReducer } from "../Modules/Search/Reducers";
 
 const reducers = combineReducers({
   search: SearchReducer,

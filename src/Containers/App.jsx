@@ -3,11 +3,10 @@ import { connect } from "react-redux";
 import Results from "../Components/Results";
 import Loading from "../Components/Loading";
 import SearchEngineSelect from "../Components/SearchEngine/SearchEngineSelect";
-import SearchActions from "../Redux/Store/Search/Actions";
-import Button from "../Components/Button";
-import "../App.css";
+import SearchActions from "../Redux/Modules/Search/Actions";
 import InputSearch from "../Components/SearchEngine/InputSearch";
 import ButtonSearch from "../Components/SearchEngine/ButtonSearch";
+import "../App.css";
 
 const App = (props) => {
   const [searchEngine, setSearchEngine] = useState("");

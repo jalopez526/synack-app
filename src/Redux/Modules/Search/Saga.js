@@ -1,5 +1,5 @@
 import { put, call } from "redux-saga/effects";
-import SearchActions from "../../Store/Search/Actions";
+import SearchActions from "../../Modules/Search/Actions";
 import { SearchEngines } from "../../../Utils/Enums/SearchEngines";
 import { searchOnGoogle } from "../../../Api/GoogleServices";
 import { searchOnBing } from "../../../Api/BingServices";
