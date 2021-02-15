@@ -1,36 +1,44 @@
 import { put, call } from "redux-saga/effects";
 import SearchActions from "../../Modules/Search/Actions";
-import { SearchEngines } from "../../../Utils/Enums/SearchEngines";
 import { searchOnGoogle } from "../../../Api/GoogleServices";
 import { searchOnBing } from "../../../Api/BingServices";
 
-export function* search(request) {
+export function* searchGoogle(request) {
+  const data = yield search(request, searchOnGoogle);
+  const formatedData = formatResponse(data.items);
+
+  yield put(SearchActions.searchDone(formatedData));
+}
+
+export function* searchBing(request) {
+  const data = yield search(request, searchOnBing);
+  const formatedData = formatResponse(data.webPages.value);
+
+  yield put(SearchActions.searchDone(formatedData));
+}
+
+export function* searchAllEngines(request) {
+  let googleData = yield search(request, searchOnGoogle);
+  let bingData = yield search(request, searchOnBing);
+
+  googleData = googleData.items;
+  bingData = bingData.webPages.value;
+
+  const formatedData = [...formatResponse(googleData), ...formatResponse(bingData)]
+  yield put(SearchActions.searchDone(formatedData));
+}
+
+export function* search(request, serviceFn) {
   yield put(SearchActions.searchLoading());
-  const { searchEngine, query } = request.payload;
+  const { payload } = request;
 
-  let response = [];
-  if ([SearchEngines.BOTH, SearchEngines.GOOGLE].includes(searchEngine)) {
-    const data = yield call(searchOnGoogle, query);
-    if (data.problem) {
-      yield put(SearchActions.searchError(data.problem));
-      return;
-    }
-    const formatedData = formatResponse(data.items);
-    response = [...formatedData];
-  }
-
-  if ([SearchEngines.BOTH, SearchEngines.BING].includes(searchEngine)) {
-    const data = yield call(searchOnBing, query);
-    if (data.problem) {
-      yield put(SearchActions.searchError(data.problem));
-      return;
-    }
-    const formatedData = formatResponse(data.webPages.value);
-
-    response = [...response, ...formatedData];
-  }
-
-  yield put(SearchActions.searchDone(response));
+  const data = yield call(serviceFn, payload);
+  if (data.problem) {
+    yield put(SearchActions.searchError(data.problem));
+    return;
+  } 
+  
+  return data;
 }
 
 const formatResponse = (data) => {

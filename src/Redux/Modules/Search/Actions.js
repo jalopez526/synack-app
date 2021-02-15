@@ -18,7 +18,9 @@ import { createActions } from "reduxsauce";
  * @see https://github.com/infinitered/reduxsauce#createactions
  */
 const { Types, Creators } = createActions({
-  search: ["payload"],
+  searchGoogle: ["payload"],
+  searchBing: ["payload"],
+  searchAllEngines: ["payload"],
   searchDone: ["data"],
   searchLoading: null,
   searchError: ["errorMessage"],

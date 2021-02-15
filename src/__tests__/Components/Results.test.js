@@ -1,6 +1,5 @@
-import Results from "../Components/Results";
+import Results from "../../Components/Results";
 import { render } from "@testing-library/react";
-import renderer from 'react-test-renderer';
 
 describe("Testing Results component", () => {
   const data = [
@@ -15,13 +14,6 @@ describe("Testing Results component", () => {
       snippet: "Bing Inc.",
     },
   ];
-
-  it('renders correctly', () => {
-    const tree = renderer
-      .create(<Results data={data} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
   
   it("should render items from Results", () => {
     const { getByTestId } = render(<Results data={data} />);

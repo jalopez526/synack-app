@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing ButtonSearch component renders correctly 1`] = `
+exports[`Testing ButtonSearch snapshot renders correctly 1`] = `
 <button
   className="button"
   data-testid="submit-button"

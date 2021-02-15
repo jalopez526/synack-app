@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing Results component renders correctly 1`] = `
+exports[`Testing Results snapshot renders correctly 1`] = `
 <div
   className="item-container"
   data-testid="result"

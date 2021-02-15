@@ -4,6 +4,7 @@ import Result from "./Result";
 const Results = ({ data }) => {
   if (!data) return <></>;
 
+  console.log(data);
   return (
     <div data-testid="result" className="item-container">
       {data.map((result, index) => (

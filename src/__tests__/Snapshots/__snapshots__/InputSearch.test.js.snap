@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing InputSearch component renders correctly 1`] = `
+exports[`Testing InputSearch snapshot renders correctly 1`] = `
 <input
   className="control"
   data-testid="search-input"

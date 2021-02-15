@@ -1,8 +1,8 @@
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
-import App from "../Containers/App";
-import { SearchEngines } from "../Utils/Enums/SearchEngines";
-import store from "../Redux/Base/ConfigureStore";
+import App from "../../Containers/App";
+import { SearchEngines } from "../../Utils/Enums/SearchEngines";
+import store from "../../Redux/Base/ConfigureStore";
 
 const AppWrapper = () => {
   return (
